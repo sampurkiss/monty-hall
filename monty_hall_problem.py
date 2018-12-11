@@ -20,8 +20,11 @@ def monty_hall(trials = 1000):
     you stick with the orignal choice. 
     If the Monty Hall solution is correct, then your probability of choosing the winning 
     door should be 2/3 if you switch your choice, and 1/3 if you don't.
-    The output is two vectors showing the proportion of success in either scenario
-    given the pre-specified number of trials and a chart showing the results.
+    Output is two lists and a chart:
+    
+        change_probs which shows success rates given door is switched 
+        stay_probs which shows success rates given door is not switched 
+        charted which plots the results of switching and not switching.    
     """
     #List for win or not results if you switch
     change_result = []
@@ -81,6 +84,11 @@ def monty_hall(trials = 1000):
     
 
 def plot_data(change_probs, stay_probs):
+    """
+    Charts the success rate of changing and not changing
+    the door choice.
+    Outputs the chart
+    """
     axis_points = np.linspace(0,1, num = 11)
     
     fig, ax = plt.subplots()
